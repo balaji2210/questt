@@ -2,9 +2,15 @@ import axios from "axios";
 
 export const getApiNew = async (url) => {
   try {
+    const token =
+      typeof window !== "undefined" ? localStorage?.getItem("token") : null;
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_BE_URL}/${url}`,
-      { withCredentials: true }
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     return {
       data: data?.data,

@@ -2,10 +2,16 @@ import axios from "axios";
 
 export const postApi = async (url, payLoad) => {
   try {
+    const token =
+      typeof window !== "undefined" ? localStorage?.getItem("token") : null;
     const { data, status } = await axios.post(
       `${process.env.NEXT_PUBLIC_BE_URL}/${url}`,
       payLoad,
-      { withCredentials: true }
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     return {
       data: data?.data,
