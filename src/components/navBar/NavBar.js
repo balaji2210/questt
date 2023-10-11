@@ -158,7 +158,7 @@ function NavBar() {
               </Link>
             )}
             {isAuthenticated ? (
-              <Button onClick={() => handleLogout()} sx={{ color: "white" }}>
+              <Button onClick={handleLogout} sx={{ color: "white" }}>
                 Logout
               </Button>
             ) : null}
