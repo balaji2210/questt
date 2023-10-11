@@ -1,0 +1,34 @@
+
+
+.container{
+    width: 85%;
+    max-width: 85rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navRight{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.mobileContainer{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .container{
+        display: none;
+    }
+    .mobileContainer{
+        width: 100%;
+        max-width: 85rem;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

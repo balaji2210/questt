@@ -1,0 +1,11 @@
+
+
+.container{
+    max-width: 85rem;
+    width: 85%;
+    margin: 1rem auto;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}

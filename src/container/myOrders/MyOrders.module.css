@@ -1,0 +1,19 @@
+
+
+
+.container{
+    max-width: 30rem;
+    width: 75%;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+@media  (max-width: 480px) {
+    .container{
+        width: 100%;
+    }
+
+}
+
