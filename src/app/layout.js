@@ -4,6 +4,7 @@ import Provider from "helpers/reactQueryProvider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import Providers from "redux/Providers";
+import axios from "axios";
 
 export const metadata = {
   title: "Books App",
@@ -11,6 +12,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  axios.defaults.headers.common["x-access-token"] =
+    typeof window !== "undefined" && window.localStorage.getItem("token")
+      ? window.localStorage.getItem("token")
+      : null;
+
   return (
     <html lang="en">
       <head>
